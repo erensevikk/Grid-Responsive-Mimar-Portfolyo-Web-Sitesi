@@ -1,0 +1,291 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0px auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0px;
+  align-items: center;
+}
+
+.navbar .title {
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.navbar .aboutMe {
+  display: flex;
+  width: 250px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar .aboutMe a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+}
+
+.navbar .aboutMe a:hover {
+  text-decoration: underline;
+}
+
+.navbar .aboutMe img {
+  width: 24px;
+}
+
+.navbar .hamburger {
+  display: none;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 36px;
+  height: 4px;
+  background-color: black;
+  border-radius: 10px;
+  margin: 5px 5px;
+}
+
+.gridLayout .project {
+  position: relative;
+}
+
+.gridLayout .project:hover {
+  opacity: 0.95;
+}
+
+.gridLayout .project .overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.gridLayout .project .overlay:hover {
+  opacity: 1;
+}
+
+.gridLayout .project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gridLayout {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "building1 building1 building2"
+    "building1 building1 building3"
+    "building4 building5 building5"
+    "building4 building5 building5"
+    "building6 building6 building7"
+    "building6 building6 building7 "
+    "building8 building9 building9"
+    "building8 building9 building9";
+}
+.worktogether {
+  width: 50%;
+  margin: 80px auto 0px;
+}
+
+.banner {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.msg {
+  color: red;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+  padding-bottom: 8px;
+  margin-top: 0;
+  border-bottom: 1px solid black;
+}
+
+.contact {
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-weight: 600;
+  margin: 0px;
+}
+.footer {
+  padding: 40px;
+  text-align: center;
+  font-size: 23px;
+}
+
+#building1 {
+  grid-area: building1;
+}
+
+#building2 {
+  grid-area: building2;
+}
+
+#building3 {
+  grid-area: building3;
+}
+
+#building4 {
+  grid-area: building4;
+}
+
+#building5 {
+  grid-area: building5;
+}
+
+#building6 {
+  grid-area: building6;
+}
+
+#building7 {
+  grid-area: building7;
+}
+
+#building8 {
+  grid-area: building8;
+}
+
+#building9 {
+  grid-area: building9;
+}
+
+@media only screen and (max-width: 768px) {
+  .gridLayout {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "building1 building1 "
+      "building2 building3"
+      "building4 building4"
+      "building5 building6"
+      "building7 building7"
+      "building8 building9";
+  }
+
+  .navbar {
+    padding: 30p 0px;
+  }
+  .navbar .title {
+    font-size: 25px;
+  }
+  .navbar .aboutMe {
+    display: none;
+  }
+
+  .navbar .hamburger {
+    display: block;
+    z-index: 2;
+  }
+  .navbar .links {
+    display: none;
+  }
+  .navbar h1 {
+    font-size: 22px;
+  }
+
+  .gridLayout .project .overlay {
+    font-size: 25px;
+  }
+  .worktogether {
+    margin: auto;
+    width: 80%;
+  }
+  .footer {
+    padding: 30px;
+    font-size: 18px;
+  }
+}
+.animationBar1 {
+  animation: 1s ease-in-out fadeBar1;
+  animation-fill-mode: forwards;
+}
+
+.animationBar2 {
+  animation: 1s ease-in-out fadeBar2;
+  animation-fill-mode: forwards;
+}
+
+.animationBar3 {
+  animation: 1s ease-in-out fadeBar3;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeBar1 {
+  from {
+    transform: rotete(0deg);
+  }
+
+  to {
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes fadeBar3 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-45deg) translate(3px, -8px);
+  }
+}
+
+.mobileNav {
+  position: fixed;
+  width: 80px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: -120px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 16px;
+  transition: transform 1s;
+  z-index: 1;
+}
+.mobileNav a {
+  margin: 16px 0px;
+  text-decoration: none;
+  color: black;
+}
+
+.openSidebar {
+  transform: translateX(-120px);
+}
